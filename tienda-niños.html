@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" href="png-logo.png" sizes="206x206">
+    <title>TIENDA LULÚ  - NIÑOS</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+   
+        <h1 target="blank" align="center">¡TIENDA LULÚ,ESCOJE TU FAVORITO!</h1>
+        <hr>
+        <br>
+        <br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="dist/jspdf.min.js"></script>
+
+     <script>
+
+
+        window.onload = function () {
+            // Variables
+
+            const baseDeDatos = [
+
+                {
+                    id: 1,
+                    nombre: 'blusa1',
+                    precio: 120,
+                    imagen: 'mujer/blusa1.jpg'
+                },
+                {
+                    id: 2,
+                    nombre: 'blusa2',
+                    precio: 130,
+                    imagen: 'mujer/blusa2.jpg'
+                },
+                {
+                    id: 3,
+                    nombre: 'blusa3',
+                    precio: 145,
+                    imagen: 'mujer/blusa3.jpg'
+                },
+                {
+                    id: 4,
+                    nombre: 'blusa4',
+                    precio: 200,
+                    imagen: 'mujer/blusa4.jpg'
+                },
+                {
+                    id: 5,
+                    nombre: 'chamarra',
+                    precio: 1200,
+                    imagen: 'mujer/chamarra2.jpg'
+                },
+                {
+                    id: 7,
+                    nombre: 'Abrigo',
+                    precio: 2000,
+                    imagen: 'mujer/chamarra4.jpg'
+                },
+                {
+                    id: 8,
+                    nombre: 'Abrigo',
+                    precio: 1200,
+                    imagen: 'mujer/chamarra5.jpg'
+                },
+                {
+                    id: 9,
+                    nombre: 'Chamarra Abrigo',
+                    precio: 490,
+                    imagen: 'mujer/chamarra6.jpg'
+                },
+                {
+                    id: 10,
+                    nombre: 'Chamarra de cuero para dama',
+                    precio: 1300,
+                    imagen: 'mujer/chamarra7.jpg'
+                },
+                {
+                    id: 11,
+                    nombre: 'Sueter Rojo',
+                    precio: 245,
+                    imagen: 'mujer/chamarra8.jpg'
+                },
+                {
+                    id: 12,
+                    nombre: 'Sudadera juvenil',
+                    precio: 350,
+                    imagen: 'mujer/chamarra10.jpg'
+                },
+                {
+                    id: 13,
+                    nombre: 'Sudadera de Dino',
+                    precio: 1200,
+                    imagen: 'mujer/chamarra11.jpg'
+                },
+                {
+                    id: 14,
+                    nombre: 'Abrigo Rojo',
+                    precio: 1300,
+                    imagen: 'mujer/chamarra12.jpg'
+                },
+                {
+                    id: 15,
+                    nombre: 'Sudadera GRIS',
+                    precio: 2000,
+                    imagen: 'mujer/chamarra13.jpg'
+                },
+                {
+                    id: 16,
+                    nombre: 'Sudadera Adidas',
+                    precio: 1200,
+                    imagen: 'mujer/chamarra14.jpg'
+                },
+                {
+                    id: 24,
+                    nombre: 'Jeans Tendencia',
+                    precio: 400,
+                    imagen: 'mujer/pantalon8.jpg'
+                },
+                 {
+                    id: 17,
+                    nombre: 'Jeans diferentes tonos',
+                    precio: 1220,
+                    imagen: 'mujer/pantalon1.jpg'
+                },
+                {
+                    id: 18,
+                    nombre: 'Jeans elasticos',
+                    precio: 330,
+                    imagen: 'mujer/pantalon2.jpg'
+                },
+                {
+                    id: 19,
+                    nombre: 'Jeans confortable',
+                    precio: 345,
+                    imagen: 'mujer/pantalon3.jfif'
+                },
+                {
+                    id: 20,
+                    nombre: 'Jeans sexi',
+                    precio: 400,
+                    imagen: 'mujer/pantalon4.jpg'
+                },
+                {
+                    id: 21,
+                    nombre: 'Jeans bang',
+                    precio: 400,
+                    imagen: 'mujer/pantalon5.jpg'
+                },
+                {
+                    id: 22,
+                    nombre: 'Jeans juvenil',
+                    precio: 300,
+                    imagen: 'mujer/pantalon6.jpg'
+                },
+                {
+                    id: 23,
+                    nombre: 'Jeans roto',
+                    precio: 3500,
+                    imagen: 'mujer/pantalon7.jpg'
+                },
+                {
+                    id: 25,
+                    nombre: 'JEANS MODA',
+                    precio: 490,
+                    imagen: 'mujer/pantalon8.jpg'
+                },
+                {
+                    id: 26,
+                    nombre: 'Jeans pink',
+                    precio: 300,
+                    imagen: 'mujer/pantalon9.jpg'
+                },
+                {
+                    id: 27,
+                    nombre: 'Jeans blanck and whrite',
+                    precio: 245,
+                    imagen: 'mujer/pantalon10.jpg'
+                },
+                {
+                    id: 28,
+                    nombre: 'Pantalon de vestir',
+                    precio: 350,
+                    imagen: 'mujer/pantalon11.jpg'
+                },
+                {
+                    id: 29,
+                    nombre: 'Sudadera de Dino',
+                    precio: 1200,
+                    imagen: 'mujer/chamarra11.jpg'
+                },
+                {
+                    id: 30,
+                    nombre: 'Pijama Morada',
+                    precio: 700,
+                    imagen: 'mujer/Pijama1.jpg'
+                },
+                {
+                    id: 31,
+                    nombre: 'chamarra',
+                    precio: 1300,
+                    imagen: 'mujer/chamarra3.jpg'
+                },
+                {
+                    id: 32,
+                    nombre: 'LENCERIA DE ANIMAL PRINT',
+                    precio: 300,
+                    imagen: 'mujer/ri1.jpg'
+                },
+                {
+                    id: 33,
+                    nombre: 'SET DE TANGAS',
+                    precio: 245,
+                    imagen: 'mujer/ri2.jpg'
+                },
+                {
+                    id: 34,
+                    nombre: 'SET-LENCERIA ENCAJE',
+                    precio: 350,
+                    imagen: 'mujer/ri3.jpg'
+                },
+                {
+                    id: 35,
+                    nombre: '3 x 1 Todas las tallas',
+                    precio: 1200,
+                    imagen: 'mujer/ri4.jpg'
+                },
+                {
+                    id: 36,
+                    nombre: 'BABY DOLL ROJO',
+                    precio: 700,
+                    imagen: 'mujer/ri5.jpg'
+                },
+                {
+                    id: 37,
+                    nombre: 'BABY DOLL CAFÉ',
+                    precio: 1300,
+                    imagen: 'mujer/ri6.jpg'
+                },
+                {
+                    id: 38,
+                    nombre: 'BOTINES NEGROS',
+                    precio: 1240,
+                    imagen: 'hombre/bota1.jpg'
+                },
+                {
+                    id: 39,
+                    nombre: 'Bota Negra Suela Cafe',
+                    precio: 1340,
+                    imagen: 'hombre/bota2.jpg'
+                },
+                {
+                    id: 40,
+                    nombre: 'Botin-Caballero',
+                    precio: 1445,
+                    imagen: 'hombre/bota4.jpg'
+                },
+                {
+                    id: 41,
+                    nombre: 'Botas Montaña',
+                    precio: 2200,
+                    imagen: 'hombre/bota5.jpg'
+                },
+                {
+                    id:42,
+                    nombre: 'Camisa de Cuadros',
+                    precio: 500,
+                    imagen: 'hombre/camisa1.jfif'
+                },
+                {
+                    id: 43,
+                    nombre: 'Camisa Azul ',
+                    precio: 1300,
+                    imagen: 'hombre/camisa2.jfif'
+                },
+                {
+                    id: 44,
+                    nombre: 'Camisa Mezclilla',
+                    precio: 290,
+                    imagen: 'hombre/chamarra1.jpg'
+                },
+                {
+                    id: 45,
+                    nombre: 'Gabardina De Invierno',
+                    precio: 1900,
+                    imagen: 'hombre/chamarra2.jpg'
+                },
+                {
+                    id: 46,
+                    nombre: 'Sudadera con Gorro',
+                    precio: 490,
+                    imagen: 'hombre/chamarra3.jpg'
+                },
+                {
+                    id: 47,
+                    nombre: 'Chaqueta de cuero para Caballero',
+                    precio: 1800,
+                    imagen: 'hombre/chaqueta1.jpg'
+                },
+                {
+                    id: 48,
+                    nombre: 'Chaqueta juvenil',
+                    precio: 445,
+                    imagen: 'hombre/Chaqueta2.jpg'
+                },
+                {
+                    id: 49,
+                    nombre: 'Sudadera juvenil',
+                    precio: 550,
+                    imagen: 'hombre/Chaqueta3.jpg'
+                },
+                {
+                    id: 50,
+                    nombre: 'Conjunto para Caballero',
+                    precio: 1200,
+                    imagen: 'hombre/combo1.jpg'
+                },
+                {
+                    id: 51,
+                    nombre: 'Trajes Casual',
+                    precio: 1600,
+                    imagen: 'hombre/conjunto1.jpg'
+                },
+                {
+                    id: 52,
+                    nombre: 'DIFERENTES DISEÑOS DE ANIMALES PARA TU BEBÉ(3 X 1)',
+                    precio: 1240,
+                    imagen: 'mujer/1.jpg'
+                },
+                {
+                    id: 53,
+                    nombre: 'VISTE ELEGANTE Y CASUAL (COMBO)',
+                    precio: 1340,
+                    imagen: 'mujer/2.jfif'
+                },
+                {
+                    id: 54,
+                    nombre: 'GEMELOS',
+                    precio: 445,
+                    imagen: 'mujer/3.jfif'
+                },
+                {
+                    id: 55,
+                    nombre: 'PARA ESTAR COMODO',
+                    precio: 280,
+                    imagen: 'mujer/4.jfif'
+                },
+                {
+                    id:56,
+                    nombre: 'BOTITAS PARA CONSENTIR',
+                    precio: 120,
+                    imagen: 'mujer/5.jfif'
+                },
+                {
+                    id: 57,
+                    nombre: 'ABRIGO DE OSO',
+                    precio: 400, 
+                    imagen: 'mujer/7.jfif'
+                },
+                {
+                    id: 58,
+                    nombre: 'ABRIGO DE CONEJO',
+                    precio: 540,
+                    imagen: 'mujer/9.jpg'
+                },
+                {
+                    id: 59,
+                    nombre: 'DIADEMA DE REGALO',
+                    precio: 340,
+                    imagen: 'mujer/10.jpg'
+                },
+                {
+                    id: 60,
+                    nombre: 'TRAJE DE DINOSAURIO (AMBOS SEXOS)',
+                    precio: 445,
+                    imagen: 'mujer/11.jpg'
+                },
+                {
+                    id: 61,
+                    nombre: 'TRAJE BAT-MAN',
+                    precio: 350,
+                    imagen: 'mujer/12.jpg'
+                },
+                {
+                    id:62,
+                    nombre: 'PLAYERA DRAGON BALL',
+                    precio: 300,
+                    imagen: 'mujer/13.jpg'
+                },
+                {
+                    id: 63,
+                    nombre: 'SET DE BOTITAS',
+                    precio: 2700, 
+                    imagen: 'mujer/14.jfif'
+                },
+                {
+                    id: 64,
+                    nombre: 'ELEGANTE TRAJE 3 X 1',
+                    precio: 640,
+                    imagen: 'mujer/15.jfif'
+                },
+                {
+                    id: 65,
+                    nombre: 'FALDA Y BLUSA ARCOIRIS',
+                    precio: 445,
+                    imagen: 'mujer/16.jpg'
+                },
+                {
+                    id: 66,
+                    nombre: 'LLUEVALO A TODAS PASRTES (GRIS)',
+                    precio: 2300,
+                    imagen: 'mujer/17.jpg'
+                },
+                {
+                    id:67,
+                    nombre: 'LLUEVALO A TODAS PASRTES(ROSA)',
+                    precio: 2500,
+                    imagen: 'mujer/18.jfif'
+                },
+                {
+                    id: 68,
+                    nombre: 'DIADEMAS DIFERENTES TONOS',
+                    precio: 700, 
+                    imagen: 'mujer/19.jpg'
+                },
+                { 
+                    id: 69,
+                    nombre: 'Bota para lluvia',
+                    precio: 440,
+                    imagen: 'niños/bniño1.jfif'
+                },
+                {
+                    id: 70,
+                    nombre: 'BOTA PARA LLUVIA AZUL',
+                    precio: 340,
+                    imagen: 'niños/bniño2.jpg'
+                },
+                {
+                    id: 71,
+                    nombre: 'BOTIN NIÑO',
+                    precio: 445.90,
+                    imagen: 'niños/bniño3.jfif'
+                },
+                {
+                    id: 72,
+                    nombre: 'BOTAS ROSA-SUELA ROSA',
+                    precio: 400,
+                    imagen: 'niños/bniño4.jfif'
+                },
+                {
+                    id:73,
+                    nombre: 'BOTAS SUELA-CAFE',
+                    precio: 500,
+                    imagen: 'niños/bniño5.jpg'
+                },
+                {
+                    id: 74,
+                    nombre: 'BOTAS PARA LLUVIA Azul-AMARILLO',
+                    precio: 600.90,
+                    imagen: 'niños/bniño6.jpg'
+                },
+                {
+                    id: 75,
+                    nombre: 'TENIS DEPORTIVOS',
+                    precio: 590,
+                    imagen: 'niños/bniño7.jpg'
+                },
+                {
+                    id: 76,
+                    nombre: 'BOTAS - Invierno',
+                    precio: 1900,
+                    imagen: 'niños/bniño8.jpg'
+                },
+                {
+                    id: 77,
+                    nombre: 'BOTAS-MILITAR',
+                    precio: 490,
+                    imagen: 'niños/bniño9.jfif'
+                },
+                {
+                    id: 78,
+                    nombre: 'BOTAS-RED',
+                    precio: 1800,
+                    imagen: 'niños/bniño10.jpg'
+                },
+                {
+                    id: 79,
+                    nombre: 'BOTAS ROSA',
+                    precio: 445,
+                    imagen: 'niños/bniño11.jpg'
+                },
+                {
+                    id: 80,
+                    nombre: 'BOTAS AZUL-NEGRO',
+                    precio: 550,
+                    imagen: 'niños/bniño12.jfif'
+                },
+                {
+                    id: 81,
+                    nombre: 'BOTINES 4 X 3',
+                    precio: 1200,
+                    imagen: 'niños/bniño13.jfif'
+                },
+                {
+                    id: 82,
+                    nombre: 'CHAMARRA DINOSAURIO',
+                    precio: 1600,
+                    imagen: 'niños/cham1.jpg'
+                },
+                {
+                    id: 83,
+                    nombre: 'CHAMARRA RASA-AZUL',
+                    precio: 2000,
+                    imagen: 'niños/cham2.jpg'
+                },
+                {
+                    id: 84,
+                    nombre: 'CHAMARRA AZIL-MARINO',
+                    precio: 1200,
+                    imagen: 'niños/cham3.jpg'
+                },
+                 {
+                    id: 85,
+                    nombre: 'CONJUNTO-AMBOS SEXOS',
+                    precio: 1220,
+                    imagen: 'niños/conj1.jpg'
+                },
+                {
+                    id: 86,
+                    nombre: 'PIJAMA RED AND WHRITE',
+                    precio: 330,
+                    imagen: 'niños/pij1.jpg'
+                },
+                {
+                    id: 87,
+                    nombre: 'PIJAMA CORAL Y NEGRO',
+                    precio: 345,
+                    imagen: 'niños/pij2.jfif'
+                },
+                {
+                    id: 88,
+                    nombre: 'PLAYERA DE BAT-MAN',
+                    precio: 400,
+                    imagen: 'niños/play1.jfif'
+                },
+                {
+                    id: 89,
+                    nombre: 'PLAYERA NEGRA LIKE',
+                    precio: 400,
+                    imagen: 'niños/play2.jfif'
+                },
+                {
+                    id: 90,
+                    nombre: 'COMBO LIGERO',
+                    precio: 300,
+                    imagen: 'niños/play3.jpg'
+                },
+                {
+                    id: 91,
+                    nombre: 'COMBO FRESCO',
+                    precio: 3500,
+                    imagen: 'niños/play4.jpg'
+                },
+                {
+                    id: 92,
+                    nombre: 'Tendencia SUETER 2 X 1',
+                    precio: 400,
+                    imagen: 'niños/suet1.jfif'
+                },
+                {
+                    id: 93,
+                    nombre: 'CONJUNTO-MOda',
+                    precio: 490,
+                    imagen: 'niños/traje1.jpg'
+                },
+                {
+                    id: 94,
+                    nombre: 'MODA MEZCLILLA',
+                    precio: 300,
+                    imagen: 'niños/traje2.jpg'
+                },
+                {
+                    id: 95,
+                    nombre: 'MODA MARINERO',
+                    precio: 245,
+                    imagen: 'niños/traj3.jfif'
+                },
+                {
+                    id: 96,
+                    nombre: 'TRAJE - FIESTA ',
+                    precio: 350,
+                    imagen: 'niños/traje4.jfif'
+                },
+                {
+                    id: 97,
+                    nombre: '6 EN 5',
+                    precio: 245,
+                    imagen: 'niños/traje6.jfif'
+                },
+                {
+                    id: 98,
+                    nombre: 'VESTIDO CASUAL ',
+                    precio: 350,
+                    imagen: 'niños/vestido1.jpg'
+                },
+                {
+                    id: 99,
+                    nombre: 'VESTIDO FIESTA',
+                    precio: 1200,
+                    imagen: 'niños/vestido2.jpg'
+                },
+                {
+                    id: 100,
+                    nombre: 'VESTIDO PRIMAVERA',
+                    precio: 1300,
+                    imagen: 'niños/vestido3.jpg'
+                },
+                {
+                    id: 101,
+                    nombre: 'VESTIDO VERDE',
+                    precio: 1300,
+                    imagen: 'niños/vestido4.jpg'
+                },
+                {
+                    id: 102,
+                    nombre: 'VESTIDO COMODO',
+                    precio: 1300,
+                    imagen: 'niños/vestido5.jpg'
+                }
+     
+            ];
+
+
+
+            let carrito = [];
+            let total = 0;
+            const DOMitems = document.querySelector('#items');
+            const DOMcarrito = document.querySelector('#carrito');
+            const DOMtotal = document.querySelector('#total');
+            const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+            const miLocalStorage = window.localStorage;
+
+            // Funciones
+
+            /**
+            * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+            */
+            function renderizarProductos() {
+                baseDeDatos.forEach((info) => {
+
+                    //INDICAS QUE DOTOS ESTARAS UTILIZANDO
+
+                    if(info.id>=68 && info.id<=102){
+
+                    // Estructura
+                    const miNodo = document.createElement('div');
+                    miNodo.classList.add('card', 'col-sm-4');
+                    // Body
+                    const miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body');
+                    // Titulo
+                    const miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info.nombre;
+                    // Imagen
+                    const miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src', info.imagen);
+                    // Precio
+                    const miNodoPrecio = document.createElement('p');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = info.precio + '$';
+                    // Boton 
+                    const miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info.id);
+                    miNodoBoton.addEventListener('click',anyadirProductoAlrCarito);
+                    // Insertamos
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    DOMitems.appendChild(miNodo);
+
+                    }
+                });
+            }
+
+            /**
+            * Añadir un producto al carrito de la compra
+            */
+            function anyadirProductoAlrCarito(evento) {
+                // Anyadimos el Nodo a nuestro carrito
+                carrito.push(evento.target.getAttribute('marcador'))
+                // Calculo el total
+                calcularTotal();
+                // Actualizamos el carrito 
+                renderizarCarrito();
+                // Actualizamos el LocalStorage
+                guardarCarritoEnLocalStorage();
+            }
+
+            /**
+            * Dibuja todos los productos guardados en el carrito
+            */
+            function renderizarCarrito() {
+                // Vaciamos todo el html
+                DOMcarrito.textContent = '';
+                // Quitamos los duplicados
+                const carritoSinDuplicados = [...new Set(carrito)];
+                // Generamos los Nodos a partir de carrito
+                carritoSinDuplicados.forEach((item) => {
+                    // Obtenemos el item que necesitamos de la variable base de datos
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        // ¿Coincide las id? Solo puede existir un caso
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    // Cuenta el número de veces que se repite el producto
+                    const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                        // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+                        return itemId === item ? total += 1 : total;
+                    }, 0);
+                    // Creamos el nodo del item del carrito
+                    const miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}$`;
+                    // Boton de borrar
+                    const miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.dataset.item = item;
+                    miBoton.addEventListener('click', borrarItemCarrito);
+                    // Mezclamos nodos
+                    miNodo.appendChild(miBoton);
+                    DOMcarrito.appendChild(miNodo);
+                });
+            }
+
+            /**
+            * Evento para borrar un elemento del carrito
+            */
+            function borrarItemCarrito(evento) {
+                // Obtenemos el producto ID que hay en el boton pulsado
+                const id = evento.target.dataset.item;
+                // Borramos todos los productos
+                carrito = carrito.filter((carritoId) => {
+                    return carritoId !== id;
+                });
+                // volvemos a renderizar
+                renderizarCarrito();
+                // Calculamos de nuevo el precio
+                calcularTotal();
+                // Actualizamos el LocalStorage
+                guardarCarritoEnLocalStorage();
+
+            }
+
+            /**
+            * Calcula el precio total teniendo en cuenta los productos repetidos
+            */
+            function calcularTotal() {
+                // Limpiamos precio anterior
+                total = 0;
+                // Recorremos el array del carrito
+                carrito.forEach((item) => {
+                    // De cada elemento obtenemos su precio
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    total = total + miItem[0].precio;
+                });
+                // Renderizamos el precio en el HTML
+                DOMtotal.textContent = total.toFixed(2);
+            }
+
+            /**
+            * Varia el carrito y vuelve a dibujarlo
+            */
+            function vaciarCarrito() {
+                // Limpiamos los productos guardados
+                carrito = [];
+                // Renderizamos los cambios
+                renderizarCarrito();
+                calcularTotal();
+                // Borra LocalStorage
+                localStorage.clear();
+
+            }
+
+            function guardarCarritoEnLocalStorage () {
+                miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+            }
+
+            function cargarCarritoDeLocalStorage () {
+                // ¿Existe un carrito previo guardado en LocalStorage?
+                if (miLocalStorage.getItem('carrito') !== null) {
+                    // Carga la información
+                    carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+                }
+            }
+
+            // Eventos
+            DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+            // Inicio
+            cargarCarritoDeLocalStorage();
+            renderizarProductos();
+            calcularTotal();
+            renderizarCarrito();
+        }
+
+    </script>
+        <script>
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        source = $('#content')[0];
+
+        specialElementHandlers = {
+           
+            '#bypassme': function (element, renderer) {
+
+                return true
+            }
+        };
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+        
+        pdf.fromHTML(
+            source, // HTML 
+            margins.left, 
+            margins.top, { 
+                'width': margins.width, //  PDF
+                'elementHandlers': specialElementHandlers
+            },
+
+            function (dispose) {
+                
+                pdf.save('RECIBO DE COMPRA.pdf');
+            }, margins
+        );
+    }
+</script>
+</head>
+<body>
+
+
+<a href="javascript:demoFromHTML()" class="button">--> Generar tiket</a>
+
+
+
+
+    <h2 target="blank" align="center"> GRAN BARATA </h2>
+        <h1 target="blank" align="center">40 %</h1>
+        <h4 target="blank" align="center">de descuento</h4>
+        <h3 target="blank" align="center">Ropa de invierno</h3>
+        <br>
+        <br>
+    <div class="container">
+        <div class="row">
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row"></main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h2>Carrito</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right" id="content" >Total: <span id="total"></span>&euro;</p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+            </aside>
+        </div>
+    </div>
+            <hr>
+            <img align="center" src="Gracias.jpg" width="80" alt="¡Gracias!">
+            <form action="../form-result.javascript" target="_blank">
+                <p> ¿QUE TE PARECIO LA TIENDA?</p>
+                <P>DEJA TU COMENTARIO</P>
+
+  <p>
+    Ingresa tu nombre completo: <br><input type="text" name="nombrecompleto"></p>
+
+  <p>
+
+    Deja un mensaje:<br>
+
+    <textarea name="mensaje"></textarea>
+
+  </p>
+
+  <input type="submit" value="Enviar la información">
+
+</form>
+    <p>CONTRATO DE ADHESIÓN DE COMERCIO ELECTRÓNICO</p>
+    <P>
+(TÉRMINOS Y CONDICIONES)  </P>
+<P align="rigt">
+
+Bienvenido al portal de comercio electrónico, en este contrato se establecen los términos y condiciones aplicables para la comercialización de bienes y/o servicios (en lo sucesivo “Los Productos”) mediante la plataforma de comercio electrónico con dominio en www.TIENDA LULÚ.com.mx (en lo sucesivo “El Portal”) visualizada vía web desde un equipo de cómputo o por dispositivos móviles; “El Portal” es propiedad y responsabilidad de Distribuidora TIENDA LULÚ, S.A. de C.V. con RFC: DLI931201MI9 (en lo sucesivo “TUENDA LULÚ”) con domicilio en Prolongación Vasco de Quiroga 4800, Torre 2 Piso 3, Colonia Santa Fe Cuajimalpa, Alcaldía Cuajimalpa de Morelos, C.P. 05348, en la Ciudad de México. “TIENDA LULÚ” es una sociedad mercantil debidamente constituida conforme a las leyes de los Estados Unidos Mexicanos, en la Ciudad de México, el 01 de diciembre de 1993 ante el Notario Público No.55, bajo la Escritura Pública número 55,110 con Folio Mercantil número 177327 de 02 de diciembre de 1993.
+
+</p>
+</form> 
+</body>
+</html>

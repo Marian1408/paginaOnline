@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+ <meta charset="UTF-8">
+
+<head >
+    <link rel="shortcut icon" href="png-logo.png" sizes="206x206">
+
+    <title>TIENDA LULÚ</title>
+    <link  href="tienda.html" >
+    <link  href="tiendaparte2.html" >
+   
+        <h1 target="blank" align="center">¡Lo que quieres al alcance de ti!</h1>
+        <hr>
+        <br>
+        <table>   
+            <h2 target="blank" align="center" color=" purple"> GRAN BARATA </h2>
+            <h1 target="blank" align="center">40 %</h1>
+            <h4 target="blank" align="center">de descuento</h4>
+            <h3 target="blank" align="center">Ropa de invierno</h3>
+            <br>
+            <br>
+            <hr>
+         </table>
+      
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+             <script src="dist/jspdf.min.js"></script>
+  
+    </script>
+    <script>
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        source = $('#content')[0];
+
+        specialElementHandlers = {
+           
+            '#bypassme': function (element, renderer) {
+
+                return true
+            }
+        };
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+        
+        pdf.fromHTML(
+            source, // HTML 
+            margins.left, 
+            margins.top, { 
+                'width': margins.width, //  PDF
+                
+                'elementHandlers': specialElementHandlers
+            },
+
+            function (dispose) {
+                
+                pdf.save('RECIBO DE COMPRA.pdf');
+            }, margins
+        );
+    }
+</script>
+</head>
+<body>
+
+
+<a href="javascript:demoFromHTML()" class="button">--> Generar tiket</a>
+</head>
+<body  bgcolor="fffwe">
+    <center><h1>Elige Tú Seccion De Ropa</h1> </center>
+        <hr/>
+    <table bordercolor="white" align="center" border="1"  bgcolor="black">
+        <tr>
+            <td>
+                <p align="center"><a target="blank" href="tienda.html">ROPA PARA DAMA</a></p>
+                <a target="blank" href="tienda.html"><p align="center"><a target="blank" href="tienda.html"></p><img src="mujer/dama.jpg"alt="DAMA"title="SECCION DE ROPA DAMA"width="300" height="300"></a></td>
+            
+
+            <td><p align="center"><a target="blank" href="tiendaparte2.html">ARTICULOS PARA CABALLERO</a></p>
+            <a href="tiendaparte2.html"><p align="center"><a target="blank" href="tiendaparte2.html"></p><img src="mujer/hombre.jpg"alt="CABALLEROS"title="ESTA IMAGEN REPRESENTA LA SECCION DE CABALLEROS"width="300" height="300"></a></td>
+        </tr>
+        <tr>
+            <td><p align="center"><a target="blank" href="tienda-niños.html">NIÑOS Y NIÑAS</a></p>
+            <a href="tienda-niños.html"><p align="center"><a target="blank" href="tienda-niños.html"></p><img src="mujer/rniños.jpg"alt="ROPA PARA NIÑOS"title="ESTA IMAGEN REPRESENTA LA SECCION DE NIÑOS" width="300" height="300"></a></td>
+
+            <td><p align="center"><a target="blank" href="bebes.html">TODO PARA BEBÉs</a></p>
+            <a href="bebes.html"><p align="center"><a target="blank" href=
+                "bebes.html"></p> <img src="mujer/bebes.jpg" alt="IMAGEN BEBÉS"title="Ropa para BEBÉS" width="300" height="300"></a>
+    </td>
+        </tr>
+    </table>
+
+    <div class="container">
+        <div class="row">
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row"></main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+               
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+
+              
+            </aside>
+        </div>
+    </div>
+<FOOter>
+    
+    <hr>
+    <img align="center" src="Gracias.jpg" width="80" alt="¡Gracias!">
+  
+    <form action="../form-result.javascript" target="_blank">
+        <p> ¿QUE TE PARECIO LA TIENDA?</p>
+        <P>DEJA TU COMENTARIO</P>
+
+<p>
+Ingresa tu nombre completo: <br><input type="text" name="nombrecompleto"></p>
+
+<p>
+
+Deja un mensaje:<br>
+
+<textarea name="mensaje"></textarea>
+
+</p>
+
+<input type="submit" value="Enviar la información">
+
+</form>
+<p>CONTRATO DE ADHESIÓN DE COMERCIO ELECTRÓNICO</p>
+<P>
+(TÉRMINOS Y CONDICIONES)  </P>
+<P align="center">
+
+Bienvenido al portal de comercio electrónico, en este contrato se establecen los términos y condiciones aplicables para la comercialización de bienes y/o servicios (en lo sucesivo “Los Productos”) mediante la plataforma de comercio electrónico con dominio en www.TIENDA LULÚ.com.mx (en lo sucesivo “El Portal”) visualizada vía web desde un equipo de cómputo o por dispositivos móviles; “El Portal” es propiedad y responsabilidad de Distribuidora TIENDA LULÚ, S.A. de C.V. con RFC: DLI931201MI9 (en lo sucesivo “TUENDA LULÚ”) con domicilio en Prolongación Vasco de Quiroga 4800, Torre 2 Piso 3, Colonia Santa Fe Cuajimalpa, Alcaldía Cuajimalpa de Morelos, C.P. 05348, en la Ciudad de México. “TIENDA LULÚ” es una sociedad mercantil debidamente constituida conforme a las leyes de los Estados Unidos Mexicanos, en la Ciudad de México, el 01 de diciembre de 1993 ante el Notario Público No.55, bajo la Escritura Pública número 55,110 con Folio Mercantil número 177327 de 02 de diciembre de 1993.
+
+</p>
+</FOOter>
+</form> 
+</body>
+</html>
